@@ -77,22 +77,22 @@ async def slap(bot: Client, message: Message):
 @Client.on_message(filters.command(['adi','അടി'], ".") & filters.me)
 async def adi(bot: Client, message: Message):
     await message.edit(
-        text=malayalam.SLAP_TEMPLATES,
+        text= choice(malayalam.SLAP_TEMPLATES),
     )
 @Client.on_message(filters.command(['women','സ്ത്രീ'], ".") & filters.me)
 async def women(bot: Client, message: Message):
     await message.edit(
-        text=malayalam.THANOS_STRINGS,
+        text= choice(malayalam.THANOS_STRINGS),
     )
 @Client.on_message(filters.command(['mpro'], ".") & filters.me)
 async def mpro(bot: Client, message: Message):
     await message.edit(
-        text=malayalam.PRO_STRINGS,
+        text=choice(malayalam.PRO_STRINGS),
     )
 @Client.on_message(filters.command(['pro'], ".") & filters.me)
 async def pro(bot: Client, message: Message):
     await message.edit(
-        text=malayalam.NOOBSTR,
+        text= choice(malayalam.NOOBSTR),
     )
 
 @Client.on_message(
