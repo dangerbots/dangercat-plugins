@@ -15,7 +15,7 @@ looters = None
 
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 5
-    number_of_cols = 3
+    number_of_cols = 4
     global looters
     looters = page_number
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
@@ -38,11 +38,11 @@ def paginate_help(page_number, loaded_modules, prefix):
         ] + [
             (
                 InlineKeyboardButton(
-                    text="✘", callback_data=f"{prefix}_prev({modulo_page})"
+                    text="«", callback_data=f"{prefix}_prev({modulo_page})"
                 ),
                 InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data="close_help"),
                 InlineKeyboardButton(
-                    text="✘", callback_data=f"{prefix}_next({modulo_page})"
+                    text="»", callback_data=f"{prefix}_next({modulo_page})"
                 ),
             )
         ]
