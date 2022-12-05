@@ -9,7 +9,7 @@ from pyrogram.types import Message
 from Zaid.helper.PyroHelpers import GetUserMentionable
 from Zaid.helper.aiohttp_helper import AioHttp
 from Zaid.helper.constants import Fs, MEMES, Weebify
-from Zaid.helper.const_string import malayalam
+from Zaid.helper.Const_string import malayalam
 from Zaid.helper.utility import get_mock_text
 from Zaid.modules.help import add_command_help
 
