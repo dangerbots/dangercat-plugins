@@ -73,7 +73,7 @@ async def slap(bot: Client, message: Message):
             )
 
 
-@Client.on_message(filters.command("adi" | "അടി", ".") & filters.me)
+@Client.on_message(filters.command(['adi','അടി'], ".") & filters.me)
 async def slap(bot: Client, message: Message):
     if message.reply_to_message is None:
         await message.edit(
