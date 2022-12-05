@@ -75,39 +75,25 @@ async def slap(bot: Client, message: Message):
 
 
 @Client.on_message(filters.command(['adi','അടി'], ".") & filters.me)
-async def slap(bot: Client, message: Message):
-    if message.reply_to_message is None:
-        await message.edit(
-            "`😌 ആരെ അടിക്കണം?`"
-        )
-        await asyncio.sleep(5)
-        await message.delete()
-        return
-    else:
-        replied_user = message.reply_to_message.from_user
-
-        if message.from_user.id is replied_user.id:
-            return
-
-        slapped = GetUserMentionable(replied_user)
-
-        temp = choice(malayalam.SLAP_TEMPLATES)
-        item = choice(malayalam.ITEMS)
-        hit = choice(malayalam.HIT)
-        throw = choice(malayalam.THROW)
-        where = choice(malayalam.WHERE)
-
-        caption = temp.format(
-            victim=slapped, item=item, hits=hit, throws=throw, where=where
-        )
-
-        try:
-            await message.edit(caption)
-        except Exception:
-            await message.edit(
-                "`Can't slap this person, need to fetch some sticks and stones!!`"
-            )
-
+async def adi(bot: Client, message: Message):
+    await message.edit(
+        text=malayalam.SLAP_TEMPLATES,
+    )
+@Client.on_message(filters.command(['women','സ്ത്രീ'], ".") & filters.me)
+async def women(bot: Client, message: Message):
+    await message.edit(
+        text=malayalam.THANOS_STRINGS,
+    )
+@Client.on_message(filters.command(['mpro'], ".") & filters.me)
+async def mpro(bot: Client, message: Message):
+    await message.edit(
+        text=malayalam.PRO_STRINGS,
+    )
+@Client.on_message(filters.command(['pro'], ".") & filters.me)
+async def pro(bot: Client, message: Message):
+    await message.edit(
+        text=malayalam.NOOBSTR,
+    )
 
 @Client.on_message(
     (filters.command("-_-", "") | filters.command("ok", ".")) & filters.me
