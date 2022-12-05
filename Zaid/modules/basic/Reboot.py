@@ -2,7 +2,7 @@ import os
 import shutil
 import asyncio
 from git import Repo
-from config import SUDO_USERS
+from Zaid import SUDO_USER
 from pyrogram.types import Message
 from pyrogram import filters, Client
 from git.exc import GitCommandError, InvalidGitRepositoryError
