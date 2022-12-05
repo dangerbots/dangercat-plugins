@@ -9,6 +9,7 @@ from pyrogram.types import Message
 from Zaid.helper.PyroHelpers import GetUserMentionable
 from Zaid.helper.aiohttp_helper import AioHttp
 from Zaid.helper.constants import Fs, MEMES, Weebify
+from Zaid.helper.const_string import malayalam
 from Zaid.helper.utility import get_mock_text
 from Zaid.modules.help import add_command_help
 
@@ -77,7 +78,7 @@ async def slap(bot: Client, message: Message):
 async def slap(bot: Client, message: Message):
     if message.reply_to_message is None:
         await message.edit(
-            "`WHO SHOULD I SLAP?`"
+            "`😌 ആരെ അടിക്കണം?`"
         )
         await asyncio.sleep(5)
         await message.delete()
@@ -90,11 +91,11 @@ async def slap(bot: Client, message: Message):
 
         slapped = GetUserMentionable(replied_user)
 
-        temp = choice(MEMES.SLAP_TEMPLATES)
-        item = choice(MEMES.ITEMS)
-        hit = choice(MEMES.HIT)
-        throw = choice(MEMES.THROW)
-        where = choice(MEMES.WHERE)
+        temp = choice(malayalam.SLAP_TEMPLATES)
+        item = choice(malayalam.ITEMS)
+        hit = choice(malayalam.HIT)
+        throw = choice(malayalam.THROW)
+        where = choice(malayalam.WHERE)
 
         caption = temp.format(
             victim=slapped, item=item, hits=hit, throws=throw, where=where
