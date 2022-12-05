@@ -4,7 +4,7 @@ from time import perf_counter
 
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from config import SUDO_USERS
+from Zaid import SUDO_USER
 import asyncio
 from handlers.help import *
 
