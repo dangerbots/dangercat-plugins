@@ -4,7 +4,7 @@ import wget
 import shutil
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from main import SUDO_USERS
+from Zaid import SUDO_USER
 
 
 async def restart(message: Message, restart_type):
