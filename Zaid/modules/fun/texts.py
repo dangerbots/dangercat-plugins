@@ -73,6 +73,41 @@ async def slap(bot: Client, message: Message):
             )
 
 
+@Client.on_message(filters.command("adi" | "അടി", ".") & filters.me)
+async def slap(bot: Client, message: Message):
+    if message.reply_to_message is None:
+        await message.edit(
+            "`WHO SHOULD I SLAP?`"
+        )
+        await asyncio.sleep(5)
+        await message.delete()
+        return
+    else:
+        replied_user = message.reply_to_message.from_user
+
+        if message.from_user.id is replied_user.id:
+            return
+
+        slapped = GetUserMentionable(replied_user)
+
+        temp = choice(MEMES.SLAP_TEMPLATES)
+        item = choice(MEMES.ITEMS)
+        hit = choice(MEMES.HIT)
+        throw = choice(MEMES.THROW)
+        where = choice(MEMES.WHERE)
+
+        caption = temp.format(
+            victim=slapped, item=item, hits=hit, throws=throw, where=where
+        )
+
+        try:
+            await message.edit(caption)
+        except Exception:
+            await message.edit(
+                "`Can't slap this person, need to fetch some sticks and stones!!`"
+            )
+
+
 @Client.on_message(
     (filters.command("-_-", "") | filters.command("ok", ".")) & filters.me
 )
