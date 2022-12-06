@@ -9,7 +9,7 @@ from pyrogram.types import Message
 from Zaid.helper.PyroHelpers import GetUserMentionable
 from Zaid.helper.aiohttp_helper import AioHttp
 from Zaid.helper.constants import Fs, MEMES, Weebify
-from Zaid.helper.Const_string import malayalam
+from Zaid.helper.Const_string import m1,m2,m3,m4
 from Zaid.helper.utility import get_mock_text
 from Zaid.modules.help import add_command_help
 
@@ -77,22 +77,22 @@ async def slap(bot: Client, message: Message):
 @Client.on_message(filters.command(['adi','അടി'], ".") & filters.me)
 async def adi(bot: Client, message: Message):
     await message.edit(
-        text= choice(malayalam.SLAP_TEMPLATES),
+        text= choice(m4.SLAP_TEMPLATES),
     )
 @Client.on_message(filters.command(['women','സ്ത്രീ'], ".") & filters.me)
 async def women(bot: Client, message: Message):
     await message.edit(
-        text= choice(malayalam.THANOS_STRINGS),
+        text= choice(m3.THANOS_STRINGS),
     )
 @Client.on_message(filters.command(['mpro'], ".") & filters.me)
 async def mpro(bot: Client, message: Message):
     await message.edit(
-        text=choice(malayalam.PRO_STRINGS),
+        text=choice(m2.PRO_STRINGS),
     )
 @Client.on_message(filters.command(['pro'], ".") & filters.me)
 async def pro(bot: Client, message: Message):
     await message.edit(
-        text= choice(malayalam.NOOBSTR),
+        text= choice(m1.NOOBSTR),
     )
 
 @Client.on_message(
