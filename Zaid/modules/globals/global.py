@@ -1,6 +1,5 @@
 from pyrogram import Client, errors, filters
 from pyrogram.types import ChatPermissions, Message
-DEVS = int(1669178360)
 from Zaid.helper.PyroHelpers import get_ub_chats
 from Zaid.modules.basic.profile import extract_user, extract_user_and_reason
 from Zaid.database import gbandb as Zaid
@@ -21,7 +20,7 @@ async def gban_user(client: Client, message: Message):
     if user_id == client.me.id:
         return await ex.edit("**Okay Done... 🐽**")
     if user_id in DEVS:
-        return await ex.edit("**Baap ko Mat sikha 🗿**")
+        return await ex.edit("**Are you mad he his ma devoleper ✨️**")
     if user_id:
         try:
             user = await client.get_users(user_id)
