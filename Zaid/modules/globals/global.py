@@ -19,8 +19,6 @@ async def gban_user(client: Client, message: Message):
         return await ex.edit("I can't find that user.")
     if user_id == client.me.id:
         return await ex.edit("**Okay Done... 🐽**")
-    if user_id in DEVS:
-        return await ex.edit("**Are you mad he his ma devoleper ✨️**")
     if user_id:
         try:
             user = await client.get_users(user_id)
